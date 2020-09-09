@@ -1,0 +1,28 @@
+package com.changgou.execption;
+
+import com.changgou.entity.Result;
+import com.changgou.entity.StatusCode;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+/**
+ * @ Author     ：CodeLiu
+ * @ Date       ：Created in 2020/09/09 19:22
+ * @ Description：
+ * @ Modified By：
+ */
+@ControllerAdvice
+public class BaseExecptionHandler {
+    /***
+     * 异常处理
+     * @param e
+     * @return
+     */
+    @ExceptionHandler(value = Exception.class)
+    @ResponseBody
+    public Result error(Exception e) {
+        e.printStackTrace();
+        return new Result(false, StatusCode.ERROR, e.getMessage());
+    }
+}
