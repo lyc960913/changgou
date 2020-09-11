@@ -12,6 +12,11 @@
     <modules>
         <module>changgou-service-goods</module>
         <module>changgou-service-file</module>
+        <module>changgou-service-bussiness</module>
+        <module>changgou-service-config</module>
+        <module>changgou-service-order</module>
+        <module>changgou-service-system</module>
+        <module>changgou-service-user</module>
     </modules>
     <artifactId>changgou-service</artifactId>
     <description>
