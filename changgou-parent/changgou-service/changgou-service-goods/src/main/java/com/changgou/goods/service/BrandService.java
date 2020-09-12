@@ -2,63 +2,68 @@ package com.changgou.goods.service;
 
 import com.changgou.goods.pojo.Brand;
 import com.github.pagehelper.PageInfo;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-/**
- * @ Author     ：CodeLiu
- * @ Date       ：Created in 2020/09/08 20:50
- * @ Description：
- * @ Modified By：
- */
+/****
+ * @Author:传智播客
+ * @Description:Brand业务层接口
+ * @Date 2019/6/14 0:16
+ *****/
 public interface BrandService {
 
-    /**
-     * 查询所有商品
-     * @return
-     */
-    List<Brand> findAll();
-
-    /**
-     * 根据id查询商品
-     * @param id
-     * @return
-     */
-    Brand findById(Integer id);
-
-    /**
-     * 添加商品
+    /***
+     * Brand多条件分页查询
      * @param brand
+     * @param page
+     * @param size
+     * @return
      */
-    void addBrand(Brand brand);
-    /**
-     * 根据id修改商品
-     */
-    void updateBrand(Brand brand);
+    PageInfo<Brand> findPage(Brand brand, int page, int size);
 
-    /**
-     * 根据id删除商品
-     * @param id
+    /***
+     * Brand分页查询
+     * @param page
+     * @param size
+     * @return
      */
-    void deleteById(Integer id);
+    PageInfo<Brand> findPage(int page, int size);
 
-    /**
-     * 根据条件筛选商品
+    /***
+     * Brand多条件搜索方法
      * @param brand
      * @return
      */
     List<Brand> findList(Brand brand);
 
+    /***
+     * 删除Brand
+     * @param id
+     */
+    void delete(Integer id);
+
+    /***
+     * 修改Brand数据
+     * @param brand
+     */
+    void update(Brand brand);
+
+    /***
+     * 新增Brand
+     * @param brand
+     */
+    void add(Brand brand);
+
     /**
-     * 分页查询
-     * @param page
-     * @param size
+     * 根据ID查询Brand
+     * @param id
      * @return
      */
-    PageInfo<Brand> findPage(Integer page,Integer size);
-    /**
-     * 条件分页查询
+     Brand findById(Integer id);
+
+    /***
+     * 查询所有Brand
+     * @return
      */
-    PageInfo<Brand> findPage(Integer page,Integer size,Brand brand);
+    List<Brand> findAll();
 }
